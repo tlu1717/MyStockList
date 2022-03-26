@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MyStockListApp: App {
+    @StateObject private var finnhubStockDataSocket = FinnhubStockDataSocket()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(finnhubStockDataSocket)
         }
     }
 }
