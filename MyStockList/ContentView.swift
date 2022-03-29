@@ -14,7 +14,7 @@ struct ContentView: View {
 }
 
 struct StockCardView: View {
-    @EnvironmentObject var finnhubStockWebSocket: FinnhubStockWebSocket
+    var finnhubStockWebSocket = FinnhubStockWebSocket()
     
     var body: some View {
         HStack{
@@ -32,9 +32,7 @@ struct StockCardView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @StateObject private static var finnhubStockWebSocket = FinnhubStockWebSocket()
     static var previews: some View {
         ContentView()
-            .environmentObject(finnhubStockWebSocket)
     }
 }
