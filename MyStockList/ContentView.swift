@@ -14,27 +14,27 @@ struct ContentView: View {
 }
 
 struct StockCardView: View {
-    @EnvironmentObject var finnhubStockDataSocket: FinnhubStockDataSocket
+    @EnvironmentObject var finnhubStockWebSocket: FinnhubStockWebSocket
     
     var body: some View {
         HStack{
-                Text(finnhubStockDataSocket.stockSymbol).font(.caption)
-            Text(finnhubStockDataSocket.eventStr).font(.title).layoutPriority(1)
+                Text(finnhubStockWebSocket.stockSymbol).font(.caption)
+            Text(finnhubStockWebSocket.latestPrice).font(.title).layoutPriority(1)
         }
         .padding(50)
         .onAppear {
-            finnhubStockDataSocket.connectToFinnHubWebSocket()
+            finnhubStockWebSocket.connectToFinnHubWebSocket()
         }
         .onDisappear {
-            finnhubStockDataSocket.disconnectFinnHubWebSocket()
+            finnhubStockWebSocket.disconnectFinnHubWebSocket()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @StateObject private static var finnhubStockDataSocket = FinnhubStockDataSocket()
+    @StateObject private static var finnhubStockWebSocket = FinnhubStockWebSocket()
     static var previews: some View {
         ContentView()
-            .environmentObject(finnhubStockDataSocket)
+            .environmentObject(finnhubStockWebSocket)
     }
 }

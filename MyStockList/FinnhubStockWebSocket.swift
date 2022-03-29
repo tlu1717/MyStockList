@@ -8,17 +8,18 @@
 import UIKit
 import Starscream
 
-class FinnhubStockDataSocket: ObservableObject{
+class FinnhubStockWebSocket: ObservableObject{
     var socket: WebSocket? = nil
     var isConnected: Bool = false
-    @Published var eventStr: String = ""
-    @Published var stockSymbol: String = "AAPL"
+    @Published var latestPrice: String = ""
+    var stockSymbol: String = "AAPL"
     
     private func getFinnhubAPIKey() throws -> String {
         guard let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String else {
             print("Cannot get Finnhub api key, please add a FINNHUB_API_KEY in xcconfig")
             throw WebSocketError.noAPIKey
         }
+        print("api key", apiKey)
         return apiKey
     }
     
@@ -61,17 +62,17 @@ class FinnhubStockDataSocket: ObservableObject{
         }
         do{
             let stockData: StockData = try JSONDecoder().decode(StockData.self, from: jsonData)
-            eventStr = String(format: "%.2f", stockData.data[0].p)
+            latestPrice = String(format: "%.2f", stockData.data[0].p)
         }
         catch {
             print("Error parsing event: \(error.localizedDescription)")
-            eventStr = eventText
+            latestPrice = eventText
         }
     }
     
 }
 
-extension FinnhubStockDataSocket: WebSocketDelegate{
+extension FinnhubStockWebSocket: WebSocketDelegate{
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
             case .connected(let headers):
