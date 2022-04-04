@@ -14,19 +14,19 @@ struct ContentView: View {
 }
 
 struct StockCardView: View {
-    var finnhubStockWebSocket = FinnhubStockWebSocket()
+    var webSocketEventViewModel = WebSocketEventViewModel()
     
     var body: some View {
         HStack{
-                Text(finnhubStockWebSocket.stockSymbol).font(.caption)
-            Text(finnhubStockWebSocket.latestPrice).font(.title).layoutPriority(1)
+                Text(webSocketEventViewModel.stockSymbol).font(.caption)
+            Text(webSocketEventViewModel.latestPrice).font(.title).layoutPriority(1)
         }
         .padding(50)
         .onAppear {
-            finnhubStockWebSocket.connectToFinnHubWebSocket()
+            webSocketEventViewModel.connectToFinnhub()
         }
         .onDisappear {
-            finnhubStockWebSocket.disconnectFinnHubWebSocket()
+            webSocketEventViewModel.disconnectFromFinnhub()
         }
     }
 }

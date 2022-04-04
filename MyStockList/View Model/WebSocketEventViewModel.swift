@@ -1,58 +1,30 @@
 //
-//  StockApiViewModel.swift
+//  WebSocketEventViewModel.swift
 //  MyStockList
 //
-//  Created by Tiff Lu on 3/21/22
+//  Created by Tiff Lu on 4/3/22.
 //
 
-import UIKit
+import Foundation
 import Starscream
 
-class FinnhubStockWebSocket: ObservableObject{
-    var socket: WebSocket? = nil
-    var isConnected: Bool = false
+class WebSocketEventViewModel {
+    var finnhubStockWebSocket: FinnhubStockWebSocket? = nil
     @Published var latestPrice: String = ""
     var stockSymbol: String = "AAPL"
+
     
-    private func getFinnhubAPIKey() throws -> String {
-        guard let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String else {
-            print("Cannot get Finnhub api key, please add a FINNHUB_API_KEY in xcconfig")
-            throw WebSocketError.noAPIKey
-        }
-        print("api key", apiKey)
-        return apiKey
+    func connectToFinnhub(){
+        finnhubStockWebSocket = FinnhubStockWebSocket(webSocketDelegate: self)
+        finnhubStockWebSocket?.connectToFinnHubWebSocket()
     }
     
-    func isWebSocketConnected() -> Bool{
-        return isConnected
-    }
-    
-    func connectToFinnHubWebSocket(){
-        do {
-            let key = try getFinnhubAPIKey()
-            guard let url = URL(string: "wss://ws.finnhub.io?token=\(key)") else{
-                throw WebSocketError.urlStringIsNil
-            }
-            
-            var request = URLRequest(url: url)
-            request.timeoutInterval = 5
-        
-            socket = WebSocket(request: request)
-            socket?.delegate = self
-            socket?.connect()
-            
-        }catch {
-            print("Failed to connect to Finnhub Web Socket")
-        }
-    }
-    
-    func disconnectFinnHubWebSocket(){
-        socket?.disconnect()
-        socket?.delegate = nil
+    func disconnectFromFinnhub(){
+        finnhubStockWebSocket?.disconnectFinnHubWebSocket()
     }
     
     func getLastPrice(symbol: String){
-        socket?.write(string: "{\"type\":\"subscribe\",\"symbol\":\"\(symbol)\"}")
+        finnhubStockWebSocket?.writeToSocket(query: "{\"type\":\"subscribe\",\"symbol\":\"\(symbol)\"}")
         print("web socket write string: {\"type\":\"subscribe\",\"symbol\":\"\(symbol)\"}")
     }
     
@@ -72,19 +44,16 @@ class FinnhubStockWebSocket: ObservableObject{
     
 }
 
-extension FinnhubStockWebSocket: WebSocketDelegate{
+extension WebSocketEventViewModel: WebSocketDelegate{
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         switch event {
             case .connected(let headers):
                 print("websocket is connected: \(headers)")
-                isConnected = true
-                getLastPrice(symbol: stockSymbol)
             case .disconnected(let reason, let code):
                 print("websocket is disconnected: \(reason) with code: \(code)")
-                isConnected = false
             case .text(let string):
                 print("Received text: \(string)")
-                onTextEventReceived(eventText: string)
+//                onTextEventReceived(eventText: string)
             case .binary(let data):
                 print("Received data: \(data.count)")
             case .ping(_):
@@ -96,7 +65,6 @@ extension FinnhubStockWebSocket: WebSocketDelegate{
             case .reconnectSuggested(_):
                 print("reconnectSuggested")
             case .cancelled:
-                isConnected = false
                 print("websocket cancelled")
             case .error(let error):
             print("websocket error: \(String(describing: error))")
