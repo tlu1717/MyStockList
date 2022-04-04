@@ -12,11 +12,10 @@ class WebSocketEventViewModel {
     var finnhubStockWebSocket: FinnhubStockWebSocket? = nil
     @Published var latestPrice: String = ""
     var stockSymbol: String = "AAPL"
-
     
     func connectToFinnhub(){
-        finnhubStockWebSocket = FinnhubStockWebSocket(webSocketDelegate: self)
-        finnhubStockWebSocket?.connectToFinnHubWebSocket()
+        finnhubStockWebSocket = FinnhubStockWebSocket()
+        finnhubStockWebSocket?.connectToFinnHubWebSocket(delegate: self)
     }
     
     func disconnectFromFinnhub(){

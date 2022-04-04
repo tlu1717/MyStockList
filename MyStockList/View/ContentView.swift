@@ -15,7 +15,6 @@ struct ContentView: View {
 
 struct StockCardView: View {
     var webSocketEventViewModel = WebSocketEventViewModel()
-    
     var body: some View {
         HStack{
                 Text(webSocketEventViewModel.stockSymbol).font(.caption)
