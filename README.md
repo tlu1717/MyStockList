@@ -1,7 +1,7 @@
 # MyStockList
 Medium Post: TBA
 
-A app to keep track of stocks. Users can make a list of stocks that they want to follow. 
+A app to keep track of stocks. Users can make a list of stocks that they want to follow. Users are able to edit the list of stocks and order it the way they want. 
 Data from [Finnhub.io websocket](https://finnhub.io/)
 
 ## Setup
