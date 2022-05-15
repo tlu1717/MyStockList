@@ -1,5 +1,5 @@
 # MyStockList
-Medium Post Link: https://medium.com/@tifflu86/pulling-real-time-data-with-websocket-and-swiftui-b4dfdd56b254 
+Medium Post: TBA
 
 A small demonstration app to get the latest stock price through [Finnhub.io websocket](https://finnhub.io/)
 <br>
