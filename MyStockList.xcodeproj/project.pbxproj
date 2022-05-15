@@ -7,23 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C2AB96227FA881200D187B6 /* StockSymbolSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2AB96127FA881200D187B6 /* StockSymbolSearch.swift */; };
-		1C2AB96727FA89F600D187B6 /* WebSocketEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2AB96627FA89F600D187B6 /* WebSocketEventViewModel.swift */; };
 		1C33110C27ED23C2007F49C4 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C33110B27ED23C2007F49C4 /* StockData.swift */; };
 		1C3F9F5F27E9319100EF1FE6 /* MyStockListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F9F5E27E9319100EF1FE6 /* MyStockListApp.swift */; };
 		1C3F9F6127E9319100EF1FE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F9F6027E9319100EF1FE6 /* ContentView.swift */; };
 		1C3F9F6327E9319200EF1FE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3F9F6227E9319200EF1FE6 /* Assets.xcassets */; };
 		1C3F9F6627E9319200EF1FE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3F9F6527E9319200EF1FE6 /* Preview Assets.xcassets */; };
 		1C3F9F6D27E937BB00EF1FE6 /* FinnhubStockWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3F9F6C27E937BA00EF1FE6 /* FinnhubStockWebSocket.swift */; };
+		1C6D82C52803986800D3FB69 /* BestMatchSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D82C42803986700D3FB69 /* BestMatchSymbol.swift */; };
+		1C6D82C72803991B00D3FB69 /* SymbolMatchApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D82C62803991B00D3FB69 /* SymbolMatchApiResponse.swift */; };
+		1C6D82CA28039DE800D3FB69 /* FinnhubUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D82C928039DE800D3FB69 /* FinnhubUtility.swift */; };
 		1CAB254827EE64CD00626C2C /* StockDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB254727EE64CD00626C2C /* StockDescription.swift */; };
 		1CAB254C27EE979400626C2C /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB254B27EE979400626C2C /* WebSocketError.swift */; };
+		1CD9DFAE282E0D7D00161762 /* AddNewStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD9DFAD282E0D7D00161762 /* AddNewStockView.swift */; };
+		1CE096ED282CB96A0082181A /* StockDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE096EC282CB96A0082181A /* StockDataHandler.swift */; };
+		1CE3A85728164E4C0073EA72 /* StockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A85628164E4C0073EA72 /* StockList.swift */; };
+		1CE3A859281656C40073EA72 /* StockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3A858281656C40073EA72 /* StockInfo.swift */; };
 		FA3F996C5C51A296160E5C3E /* Pods_MyStockList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 065CAA2066570B0133A6333D /* Pods_MyStockList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		065CAA2066570B0133A6333D /* Pods_MyStockList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStockList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C2AB96127FA881200D187B6 /* StockSymbolSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbolSearch.swift; sourceTree = "<group>"; };
-		1C2AB96627FA89F600D187B6 /* WebSocketEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketEventViewModel.swift; sourceTree = "<group>"; };
 		1C33110B27ED23C2007F49C4 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
 		1C3F9F5B27E9319100EF1FE6 /* MyStockList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStockList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3F9F5E27E9319100EF1FE6 /* MyStockListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStockListApp.swift; sourceTree = "<group>"; };
@@ -31,10 +34,17 @@
 		1C3F9F6227E9319200EF1FE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C3F9F6527E9319200EF1FE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C3F9F6C27E937BA00EF1FE6 /* FinnhubStockWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinnhubStockWebSocket.swift; sourceTree = "<group>"; };
+		1C6D82C42803986700D3FB69 /* BestMatchSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestMatchSymbol.swift; sourceTree = "<group>"; };
+		1C6D82C62803991B00D3FB69 /* SymbolMatchApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolMatchApiResponse.swift; sourceTree = "<group>"; };
+		1C6D82C928039DE800D3FB69 /* FinnhubUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinnhubUtility.swift; sourceTree = "<group>"; };
 		1CA293DE27F1734E00C5A1BE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1CAB254727EE64CD00626C2C /* StockDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDescription.swift; sourceTree = "<group>"; };
 		1CAB254A27EE94F700626C2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1CAB254B27EE979400626C2C /* WebSocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketError.swift; sourceTree = "<group>"; };
+		1CD9DFAD282E0D7D00161762 /* AddNewStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStockView.swift; sourceTree = "<group>"; };
+		1CE096EC282CB96A0082181A /* StockDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataHandler.swift; sourceTree = "<group>"; };
+		1CE3A85628164E4C0073EA72 /* StockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockList.swift; sourceTree = "<group>"; };
+		1CE3A858281656C40073EA72 /* StockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfo.swift; sourceTree = "<group>"; };
 		6C11444CB17C1FF4769C17AD /* Pods-MyStockList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStockList.debug.xcconfig"; path = "Target Support Files/Pods-MyStockList/Pods-MyStockList.debug.xcconfig"; sourceTree = "<group>"; };
 		C116AA3FFB06BE9461D7E2D9 /* Pods-MyStockList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStockList.release.xcconfig"; path = "Target Support Files/Pods-MyStockList/Pods-MyStockList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,8 +64,12 @@
 		1C2AB96327FA882200D187B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CAB254B27EE979400626C2C /* WebSocketError.swift */,
 				1CAB254727EE64CD00626C2C /* StockDescription.swift */,
 				1C33110B27ED23C2007F49C4 /* StockData.swift */,
+				1C6D82C62803991B00D3FB69 /* SymbolMatchApiResponse.swift */,
+				1C6D82C42803986700D3FB69 /* BestMatchSymbol.swift */,
+				1CE3A858281656C40073EA72 /* StockInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -64,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				1C3F9F6027E9319100EF1FE6 /* ContentView.swift */,
+				1CD9DFAD282E0D7D00161762 /* AddNewStockView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -72,18 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				1C3F9F6C27E937BA00EF1FE6 /* FinnhubStockWebSocket.swift */,
-				1C2AB96127FA881200D187B6 /* StockSymbolSearch.swift */,
-				1CAB254B27EE979400626C2C /* WebSocketError.swift */,
 			);
 			path = "Data Layer";
-			sourceTree = "<group>";
-		};
-		1C2AB96827FA89FF00D187B6 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				1C2AB96627FA89F600D187B6 /* WebSocketEventViewModel.swift */,
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		1C3F9F5227E9319100EF1FE6 = {
@@ -108,7 +113,8 @@
 		1C3F9F5D27E9319100EF1FE6 /* MyStockList */ = {
 			isa = PBXGroup;
 			children = (
-				1C2AB96827FA89FF00D187B6 /* View Model */,
+				1CE096EE282CBA910082181A /* ViewModel */,
+				1C6D82C828039DD900D3FB69 /* Utility */,
 				1C2AB96527FA88F100D187B6 /* Data Layer */,
 				1C2AB96427FA883C00D187B6 /* View */,
 				1C2AB96327FA882200D187B6 /* Model */,
@@ -126,6 +132,23 @@
 				1C3F9F6527E9319200EF1FE6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1C6D82C828039DD900D3FB69 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1C6D82C928039DE800D3FB69 /* FinnhubUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		1CE096EE282CBA910082181A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1CE3A85628164E4C0073EA72 /* StockList.swift */,
+				1CE096EC282CB96A0082181A /* StockDataHandler.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9AEDC567F90D75FE47059081 /* Pods */ = {
@@ -261,12 +284,17 @@
 			files = (
 				1CAB254827EE64CD00626C2C /* StockDescription.swift in Sources */,
 				1C3F9F6D27E937BB00EF1FE6 /* FinnhubStockWebSocket.swift in Sources */,
-				1C2AB96227FA881200D187B6 /* StockSymbolSearch.swift in Sources */,
+				1CD9DFAE282E0D7D00161762 /* AddNewStockView.swift in Sources */,
 				1CAB254C27EE979400626C2C /* WebSocketError.swift in Sources */,
 				1C3F9F6127E9319100EF1FE6 /* ContentView.swift in Sources */,
-				1C2AB96727FA89F600D187B6 /* WebSocketEventViewModel.swift in Sources */,
+				1C6D82C72803991B00D3FB69 /* SymbolMatchApiResponse.swift in Sources */,
+				1CE3A859281656C40073EA72 /* StockInfo.swift in Sources */,
+				1CE3A85728164E4C0073EA72 /* StockList.swift in Sources */,
+				1C6D82C52803986800D3FB69 /* BestMatchSymbol.swift in Sources */,
 				1C3F9F5F27E9319100EF1FE6 /* MyStockListApp.swift in Sources */,
+				1CE096ED282CB96A0082181A /* StockDataHandler.swift in Sources */,
 				1C33110C27ED23C2007F49C4 /* StockData.swift in Sources */,
+				1C6D82CA28039DE800D3FB69 /* FinnhubUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
