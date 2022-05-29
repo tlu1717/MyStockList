@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddNewStockView: View {
     @State private var stockSymbol: String = ""
-    @ObservedObject var stockList: StockList = StockList.shared
+    @ObservedObject var stockList: StockList
     @Binding var isPresented: Bool
     var body: some View {
         NavigationView{
@@ -40,7 +40,8 @@ struct AddNewStockView: View {
 
 struct AddNewStockView_Previews: PreviewProvider {
     @State static var isPresented = false
+    @StateObject static var stockList = StockList.shared
     static var previews: some View {
-        AddNewStockView(isPresented: $isPresented)
+        AddNewStockView(stockList: stockList, isPresented: $isPresented)
     }
 }
