@@ -9,19 +9,17 @@ import Foundation
 import Starscream
 class StockDataHandler {
     let stockList = StockList.shared
-
+    
     func onTextEventReceived(eventText: String) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            guard let jsonData = eventText.data(using: .utf8) else{
-                return
-            }
-            do{
-                let stockData: StockData = try JSONDecoder().decode(StockData.self, from: jsonData)
-                self.parseStockData(stockData: stockData)
-            }
-            catch {
-                print("decode error")
-            }
+        guard let jsonData = eventText.data(using: .utf8) else{
+            return
+        }
+        do{
+            let stockData: StockData = try JSONDecoder().decode(StockData.self, from: jsonData)
+            self.parseStockData(stockData: stockData)
+        }
+        catch {
+            print("decode error")
         }
     }
     

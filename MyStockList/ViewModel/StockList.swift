@@ -33,7 +33,9 @@ class StockList: ObservableObject {
     
     func updateStockPrice(symbol: String, price: Double) {
         let index = findStockIndex(symbol: symbol)
-        stocks[index].price = String(format: "%.2f", price)
+        if index != -1 {
+            stocks[index].price = String(format: "%.2f", price)
+        }
     }
     
     func addStock(symbol: String) {
